@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tessssssst S</title>
+    <script>
+      let socket = new WebSocket("ws://localhost:8080");
+      socket.addEventListener("open", () => {
+        socket.send(JSON.stringify({ collection: "bis", type: "subscribe" }));
+      });
+      socket.addEventListener("message", (data) => {
+        console.log(data);
+      });
+    </script>
+  </head>
+  <body></body>
+</html>
